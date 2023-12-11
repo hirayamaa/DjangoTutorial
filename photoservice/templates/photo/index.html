@@ -1,8 +1,8 @@
 {% extends 'photo/base.html' %}
 
 {% block content %}
-<h2>トップページ</h2>
-{% for photo in photos %}
-  <img src="{{ photo.image.url }}" class="photo-img">
-{% endfor %}
+{% if category %}
+    <h2>カテゴリー：{{ category.title }}の検索結果</h2>
+{% endif %}
+{% include 'photo/photos_list.html' %}
 {% endblock %}
